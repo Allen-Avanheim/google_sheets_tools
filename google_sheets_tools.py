@@ -84,6 +84,7 @@ class SheetsDownloader:
             Path(folder_name).mkdir()
 
         filename = self.__get_name(url=self.__url)
+        filename = filename.replace('/', '-').replace('\\', '-')
         number = 1
         full_filename = Path(folder_name, f'{filename}.{self.__extension}')
         true_filename = full_filename.name
